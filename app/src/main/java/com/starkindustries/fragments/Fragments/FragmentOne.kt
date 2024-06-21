@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.starkindustries.fragments.R
-import com.starkindustries.fragments.databinding.FragmentOneBinding
+//import com.starkindustries.fragments.databinding.FragmentOneBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,7 +22,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragmentOne : Fragment() {
-    lateinit var binding:FragmentOneBinding
+//    lateinit var binding:FragmentOneBinding
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -40,7 +40,7 @@ class FragmentOne : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         var view =  inflater.inflate(R.layout.fragment_one, container, false)
-        binding= DataBindingUtil.setContentView(context as Activity,R.layout.fragment_one)
+//        binding= DataBindingUtil.setContentView(context as Activity,R.layout.fragment_one)
         return view
     }
 
