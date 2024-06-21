@@ -7,7 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatButton
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.starkindustries.fragments.R
 //import com.starkindustries.fragments.databinding.FragmentOneBinding
 
@@ -22,6 +25,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragmentOne : Fragment() {
+    lateinit var fragmentTwoButton:AppCompatButton
 //    lateinit var binding:FragmentOneBinding
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -41,6 +45,16 @@ class FragmentOne : Fragment() {
         // Inflate the layout for this fragment
         var view =  inflater.inflate(R.layout.fragment_one, container, false)
 //        binding= DataBindingUtil.setContentView(context as Activity,R.layout.fragment_one)
+        fragmentTwoButton=view.findViewById(R.id.fragmentTwoButton)
+        fragmentTwoButton.setOnClickListener(){
+            var fragmentManager:FragmentManager = parentFragmentManager
+            var fragmentTransaction:FragmentTransaction = fragmentManager.beginTransaction()
+            val bundle:Bundle= Bundle().apply {
+                putString("name","Aditya")
+            }
+            fragmentTransaction.replace(R.id.framelayout,FragmentSecond()::class.java,bundle)
+            fragmentTransaction.commit()
+        }
         return view
     }
 
